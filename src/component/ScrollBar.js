@@ -14,16 +14,11 @@ export default function ScrollBar(props) {
   const observer = useRef();
 
   const lastBirdRef = (node) => {
-    const options = {
-      root: document.querySelector("node"),
-      rootMargin: "1px",
-      threshold: 0.3,
-    };
     observer.current = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
         props.fetchData();
       }
-    }, options);
+    });
 
     if (node) {
       observer.current.observe(node);

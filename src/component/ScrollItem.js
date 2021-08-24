@@ -2,7 +2,6 @@ import React from "react";
 import "./style/scrollitem.css";
 function ScrollItem(props) {
   const handleClick = () => {
-    console.log(props.bird);
     props.handleSelectedBird(props.bird);
   };
   return (
